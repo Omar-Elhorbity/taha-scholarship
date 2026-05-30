@@ -1,0 +1,135 @@
+% Curriculum Vitae - Mohamed Taha Elshishtawy (Version 2 - paraphrased, full page)
+% EU / German (Lebenslauf) standard, full A4 page, compiled with pdflatex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1.4cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+% ---- Colors ----
+\definecolor{accent}{HTML}{1A4D7A}
+\definecolor{rule}{HTML}{BFC9D3}
+\definecolor{muted}{HTML}{555555}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent
+}
+
+% ---- Spacing ----
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\renewcommand{\baselinestretch}{1.0}
+
+% ---- Section headings ----
+\titleformat{\section}
+  {\color{accent}\large\bfseries\scshape}
+  {}{0em}{}[\vspace{1pt}{\color{rule}\titlerule[1pt]}]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+
+% ---- Helpers ----
+\newcommand{\entry}[3]{%
+  \noindent\begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & {\color{muted}#3} \\
+  \end{tabularx}%
+  \ifx&#2&\else\vspace{1pt}\\[-2pt]{\color{muted}\itshape #2}\fi%
+  \par\vspace{3pt}
+}
+
+\newcommand{\skillrow}[2]{\textbf{#1} & #2 \\[3pt]}
+
+\newenvironment{cvitems}
+  {\begin{itemize}[leftmargin=1.3em,itemsep=2pt,topsep=3pt,parsep=0pt]}
+  {\end{itemize}}
+
+\begin{document}
+
+% ============ HEADER ============
+{\Huge\bfseries Mohamed Taha Elshishtawy}\\[5pt]
+{\large\color{accent}\scshape Bug Hunter}\\[7pt]
+{\color{muted}%
+\href{mailto:MohamedTahaElshishtawy@gmail.com}{MohamedTahaElshishtawy@gmail.com} \quad\textbar\quad
++20 114 120 2347 \quad\textbar\quad
+Cairo, Egypt \quad\textbar\quad
+\href{https://www.linkedin.com/in/mohamed-elshishtawy-871694194/}{LinkedIn}%
+}
+
+\vspace{3pt}
+{\color{rule}\hrule height 1pt}
+\vspace{2pt}
+
+% ============ PROFILE ============
+\section{Profile}
+Cybersecurity practitioner and Computer Engineering graduate specialising in offensive
+security and penetration testing. I have built hands-on expertise through intensive ITI
+training, structured security labs, and continuous practice on PortSwigger Web Security
+Academy and Hack The Box. I am currently active as an independent Bug Hunter, identifying
+and responsibly disclosing real-world vulnerabilities, and I am eager to strengthen my
+academic and technical foundation while helping protect critical systems and infrastructure.
+
+% ============ EXPERIENCE ============
+\section{Professional Experience}
+\entry{Bug Hunter \normalfont{--- Independent / Freelance}}{Offensive security research and responsible vulnerability disclosure}{Present}
+\vspace{-2pt}
+\begin{cvitems}
+  \item Research and exploit security flaws across web, mobile and network targets, mapping findings to the OWASP Top 10.
+  \item Reproduce, validate and document vulnerabilities, then report them through responsible-disclosure channels.
+\end{cvitems}
+\vspace{2pt}
+
+\entry{Cyber Security Diploma, \normalfont{Trainee}}{Information Technology Institute (ITI) --- Intensive Training Program}{07/2025 -- 12/2025}
+\vspace{-2pt}
+\begin{cvitems}
+  \item Completed an intensive, hands-on program covering web, mobile, network and Active Directory penetration testing.
+  \item Applied industry-standard tooling and methodologies in guided labs, strengthening reporting and teamwork skills.
+\end{cvitems}
+
+% ============ EDUCATION ============
+\section{Education}
+\entry{B.Sc. in Computer Engineering \normalfont{--- Menoufia University}}{Faculty of Electronic Engineering}{09/2019 -- 06/2024}
+\vspace{-2pt}
+\begin{cvitems}
+  \item Graduation Project: \textit{Implementing and Securing Network Infrastructure} --- graded \textbf{Excellent}.
+  \item Foundation in computer networks, systems and software engineering relevant to security work.
+\end{cvitems}
+
+% ============ CERTIFICATIONS ============
+\section{Certifications}
+\begin{cvitems}
+  \item \textbf{eWPTv2} --- eLearnSecurity Web Application Penetration Tester \href{https://certs.ine.com/85adc2a2-9344-4a6d-a276-5653d15267c2\#acc.fApd1TeR}{(verify)}
+  \item \textbf{CyberTalents} --- Web Application Penetration Testing \href{https://cybertalents.com/certifications/4959bf05-eabf-41a3-98ad-d55bd0d35f8c}{(verify)}; Mobile Application Penetration Testing \href{https://cybertalents.com/certifications/49e097e9-173f-4a6d-bde8-f32251b2282c}{(verify)}; Active Directory Penetration Testing \href{https://cybertalents.com/certifications/e976caf4-b8a5-4b0c-a33c-896ccbd770c7}{(verify)}
+  \item \textbf{In progress:} CPTS --- Certified Penetration Testing Specialist (HTB)
+\end{cvitems}
+
+% ============ TECHNICAL SKILLS ============
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.2cm} X@{}}
+\skillrow{Penetration Testing}{Web, mobile and network assessments; OWASP Top 10 exploitation and mitigation}
+\skillrow{Scripting}{Bash, Python}
+\skillrow{Tools \& Platforms}{Burp Suite, Nmap, Metasploit, SearchSploit, Frida, Kali Linux}
+\skillrow{Security Domains}{Vulnerability assessment, Active Directory, network security \& routing, OSINT, system administration}
+\end{tabularx}
+
+% ============ INTERPERSONAL SKILLS ============
+\section{Interpersonal Skills}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+$\bullet$~Fast, self-directed learner & $\bullet$~Clear communication & $\bullet$~Teamwork \& collaboration \\[3pt]
+$\bullet$~Presentation skills & $\bullet$~Strong attention to detail & $\bullet$~Technical report writing \\
+\end{tabularx}
+
+% ============ LANGUAGES ============
+\section{Languages}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.2cm} X@{}}
+\textbf{Arabic} & Native speaker \\[4pt]
+\textbf{English} & Proficient (professional working proficiency) \\
+\end{tabularx}
+
+\end{document}
